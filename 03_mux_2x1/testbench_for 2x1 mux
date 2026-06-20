@@ -1,0 +1,25 @@
+module mux_2_1_tb;
+
+reg [1:0] i;
+reg s;
+wire y;
+
+integer k;
+
+mux_2_1 uut (
+    .s(s),
+    .i(i),
+    .y(y)
+);
+
+initial begin
+    for(k = 0; k < 8; k = k + 1)
+    begin
+        {s,i} = k;
+        #10;
+    end
+
+    $finish;
+end
+
+endmodule
